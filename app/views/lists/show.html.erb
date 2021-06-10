@@ -1,7 +1,22 @@
 <h1> <%= @list.name %> </h1>
 
-<%= link_to "Back to your lists", lists_path %>
 
+<div class="container">
+  <div class="d-flex">
+    <ul>
+      <% @list.bookmarks.each do |bookmark| %>
+      <li>
+        <%= bookmark.comment %>
+      </li>
+      <% end %>
+    </ul>
+    <li>
+    </li>
+  </div>
+</div>
+
+
+<%= link_to "Back to your lists", lists_path %>
 <%= link_to "Delete #{@list.name}",
             list_path(@list),
             method: :delete,
