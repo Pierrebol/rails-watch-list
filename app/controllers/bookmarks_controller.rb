@@ -19,10 +19,9 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    @list = @bookmark.list
     @bookmark.destroy
-
-    # no need for app/views/restaurants/destroy.html.erb
-    redirect_to bookmarks_path
+    redirect_to list_path(@list)
   end
 
   private
