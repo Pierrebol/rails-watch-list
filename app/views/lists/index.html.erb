@@ -1,13 +1,23 @@
-<div class="container">
-  <h1>This is all your lists</h1>
-  <%= link_to "Add a list", new_list_path %>
-
-  <ul>
-    <% @lists.each do |list| %>
-    <li>
-      <%= link_to "#{list.name}" , list_path(list) %>
-    </li>
-    <% end %>
-  </ul>
+<div class="banner-lists" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1524779709304-40b5a3560c60?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29sbGVjdGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);">
+    <h1>All your lists</h1>
 </div>
 
+
+<div class="cards">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div>
+          <h2> <%= list.name %></h2>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+</div>
+
+
+
+
+
+
+  <%= link_to "Add a list", new_list_path %>

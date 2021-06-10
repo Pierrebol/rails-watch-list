@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+$gray: #F6F6F6;
+
+body {
+  background: $gray; // Using this variable
+}
