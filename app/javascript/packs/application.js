@@ -19,3 +19,11 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap';
+
+import { loadDynamicBannerText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicBannerText();
+});
