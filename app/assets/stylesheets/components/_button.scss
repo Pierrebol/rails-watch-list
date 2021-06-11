@@ -14,3 +14,14 @@ a {
     color: #59090E;
   }
 }
+
+.form{
+  opacity: 0.8;
+  border: solid 1px black;
+  border-radius: 15px;
+  padding: 10px;
+  color: black;
+}
+.form:hover {
+  opacity: 1
+}

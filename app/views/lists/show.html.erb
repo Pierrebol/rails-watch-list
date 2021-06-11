@@ -1,30 +1,34 @@
-<h1> <%= @list.name %> </h1>
+<div class="banner show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1505775561242-727b7fba20f0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGZpbG18ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);">
+    <h1><%= @list.name %></h1>
+</div>
 
-
-<div class="container">
-  <div class="d-flex">
-    <ul>
-      <% @list.bookmarks.each do |bookmark| %>
-      <li>
-        <%= bookmark.movie.title %> -
-        <%= bookmark.comment %> -
-        <%= link_to "Delete",
+<div class="cards container">
+  <% @list.bookmarks.each do |bookmark| %>
+      <div class="card-category-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGZpbG18ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)">
+        <div class="infos">
+          <h2> <%= bookmark.movie.title %> </h2>
+          <p> <%= bookmark.comment %> </p>
+          <%= link_to "X",
             bookmark_path(bookmark),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
+        </div>
+      </div>
+    <% end %>
 </div>
 
+<%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, bookmark_path(bookmark), method: :delete, class: "delete-card" %>
 
-<%= link_to "Back to your lists", lists_path %>
-<%= link_to "Delete #{@list.name}",
-            list_path(@list),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-<%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
 
+
+
+<div class="container">
+  <%= link_to "Back to your lists", lists_path %>
+  <%= link_to "Delete #{@list.name}",
+              list_path(@list),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+  <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+</div>
 
 
