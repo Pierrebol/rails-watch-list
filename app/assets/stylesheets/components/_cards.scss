@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 10px;
 }
 
 .card-category {
@@ -9,4 +9,5 @@
   justify-content: center;
   align-items: center;
   height: 200px;
+  margin: 5px;
 }
