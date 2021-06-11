@@ -15,12 +15,10 @@
 </div>
 
 
-
-
 <div class="container">
   <%= link_to "Back to your lists", lists_path %>
   <%= link_to "Delete #{@list.name}",
-              lists_path,
+              list_path(@list),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
   <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
