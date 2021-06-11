@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .banner h1 {
@@ -32,16 +33,11 @@
 }
 
 .show {
-  width: cover;
   height: 50px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  margin-bottom: 15px;
-  h1 {
-    text-align: center;
-    margin: 0 auto;
-  }
+  position: relative;
+}
+.links {
+  position: absolute;
+  bottom: 10px;
+  left: 430px;
 }
